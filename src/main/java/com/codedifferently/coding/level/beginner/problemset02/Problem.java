@@ -103,10 +103,6 @@ public class Problem {
             String middle = str.substring(1, str.length() - 1);
             return lastChar + middle + firstChar;
         }
-
-
-
-
     }
 
 
@@ -126,12 +122,7 @@ public class Problem {
      */
 
     public static Boolean multipleOf(int number){
-        if(number % 3 == 0 || number % 5 == 0){
-            return true;
-        }
-        else {
-            return false;
-        }
+        return number % 3 == 0 || number % 5 == 0;
     }
 
 
@@ -152,12 +143,7 @@ public class Problem {
         if(temp1 < 0 && temp2 > 100){
             return true;
         }
-        else if (temp2 < 0 && temp1 > 100){
-            return true;
-        }
-        else {
-            return false;
-        }
+        else return temp2 < 0 && temp1 > 100;
 
     }
 
@@ -237,11 +223,6 @@ public class Problem {
     public static Boolean range3050(int one, int two) {
         if(one >= 30 && one <=40 && two >= 30 && two <=40 ){
             return true;
-        } else if (one >= 40 && one <=50 && two >= 40 && two <=50){
-            return true;
-        }
-        else {
-            return false;
-        }
+        } else return one >= 40 && one <= 50 && two >= 40 && two <= 50;
     }
 }
