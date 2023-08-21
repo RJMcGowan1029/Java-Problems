@@ -18,7 +18,11 @@ public class Problem {
      */
 
     public static String everyOther(String str, int n) {
+        String newJawn = "";
 
+        for (int i = 0; i < str.length(); i += n) {
+            newJawn += i;
+        }
         return null;
     }
 
@@ -36,8 +40,7 @@ public class Problem {
     */
 
     public static Boolean dogTrouble(boolean bulldogGrowl, boolean labGrowl) {
-
-        return null;
+        return bulldogGrowl && labGrowl || !bulldogGrowl && !labGrowl;
     }
 
     /* Problem 13
@@ -53,8 +56,7 @@ public class Problem {
      */
 
     public static Boolean puppyCry(boolean crying, int hour) {
-
-        return null;
+        return crying && hour < 7 || crying && hour > 20;
     }
 
 
@@ -73,8 +75,10 @@ public class Problem {
      */
 
     public static Boolean checkPosOrNeg(int a, int b, boolean negative) {
-
-        return null;
+        if(a > 0 && b < 0){
+            return true;
+        }
+        else return b > 0 && a < 0;
     }
 
 
@@ -90,8 +94,19 @@ public class Problem {
      */
 
     public static String exchange(String str) {
+        if(str.length() <= 1){
+            return str;
+        }
+        else {
+            char firstChar = str.charAt(0);
+            char lastChar = str.charAt(str.length() - 1);
+            String middle = str.substring(1, str.length() - 1);
+            return lastChar + middle + firstChar;
+        }
 
-        return null;
+
+
+
     }
 
 
@@ -111,8 +126,12 @@ public class Problem {
      */
 
     public static Boolean multipleOf(int number){
-
-        return null;
+        if(number % 3 == 0 || number % 5 == 0){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
 
@@ -130,8 +149,16 @@ public class Problem {
      */
 
     public static Boolean checkTemp(int temp1, int temp2) {
+        if(temp1 < 0 && temp2 > 100){
+            return true;
+        }
+        else if (temp2 < 0 && temp1 > 100){
+            return true;
+        }
+        else {
+            return false;
+        }
 
-        return null;
     }
 
 
@@ -151,8 +178,15 @@ public class Problem {
      */
 
     public static Boolean oneTeen(int person1, int person2) {
-
-        return null;
+        if(person1 >= 13 && person1 <= 19 && person2 < 13 || person2 >19){
+            return true;
+        }
+        else if(person2 >= 13 && person2 <= 19 && person1 < 13 || person1 >19){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
 
@@ -170,6 +204,18 @@ public class Problem {
      */
 
     public static String beginWithOz(String ounces) {
+        char o = (char) ounces.indexOf('o');
+        char z = (char) ounces.indexOf('z');
+
+        if(ounces.indexOf("oz") == 0){
+            return "oz";
+        }
+        else if(o == 0 && z !=1){
+            return "o";
+        }
+        else if (o != 0 && z ==1){
+            return "z";
+        }
 
         return null;
     }
@@ -189,7 +235,13 @@ public class Problem {
      */
 
     public static Boolean range3050(int one, int two) {
-
-        return null;
+        if(one >= 30 && one <=40 && two >= 30 && two <=40 ){
+            return true;
+        } else if (one >= 40 && one <=50 && two >= 40 && two <=50){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }
